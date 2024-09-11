@@ -29,7 +29,8 @@ void in(u16 a) {
 }
 
 void out(u16 a) {
-    printf("%d\n", memory[a]);
+    unsigned char unsigned_a = memory[a];
+    printf("%d\n", unsigned_a);
     PC += 3;
 }
 
