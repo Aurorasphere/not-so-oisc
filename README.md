@@ -10,19 +10,19 @@ The **(Not so) OISC**, or **NOISC**, is a computer that operates primarily using
 Each instruction has a variable length, making this computer similar to a CISC architecture. But the only instruction that performs actual computation is subleq, while the other instructions are used to write/read values to/from specific memory addresses or perform operations that would be difficult with just subleq.
 
 ### Instructions of the NOISC Computer
-1. subleq a, b, c
-<br>perform b = b - a, and if b <= 0, branch to c. a and b, c are addressees. 7 Bytes long.
+1. `subleq a, b, c`
+<br>perform `b = b - a`, and if `b` <= 0, branch to `c`. `a` and `b`, `c` are addressees. `c` can either be a label or a 16-bit address, but it is recommended to use labels. 7 Bytes long.
 
-2. set addr, value
-<br>Sets the value at memory address addr to value. 4 bytes long.
+2. `set addr, value`
+<br>Sets the value at memory address `addr` to `value`. 4 bytes long.
 
-3. in addr
-<br>Reads input from the user and stores it at memory address addr. 3 bytes long.
+3. `in addr`
+<br>Reads input from the user and stores it at memory address `addr`. 3 bytes long.
 
-4. out addr
-<br>Outputs the value stored at memory address addr. 3 bytes long.
+4. `out addr`
+<br>Prints the value stored at memory address `addr`. 3 bytes long.
 
-5. hlt
+5. `hlt`
 <br>Halts the program. 1 byte long.
 
 ## How to use
