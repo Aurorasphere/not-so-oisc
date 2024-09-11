@@ -43,7 +43,7 @@ If everything is done correctly, the computer executable will be located in the 
 1. Write some assembly code and save.
 2. type `python src/assembler.py [YOUR CODE'S NAME].s [OUT FILE'S NAME].out` in your terminal.
 #### Computer
-1. type `src/oiscomputer [OUT FILE'S NAME].out` in your terminal.
+1. type `bin/oiscomputer [OUT FILE'S NAME].out` in your terminal.
  
 ## Example Program
 
