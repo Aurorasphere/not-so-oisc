@@ -1,19 +1,26 @@
 CC = gcc
 CFLAGS = -Wall -g  
 
-TARGET = bin/oiscomputer
+COMPUTER_TARGET = bin/oiscomputer
+ASSEMBLER_TARGET = bin/assembler
 
-SRCS = src/main.c src/include/instruction.c src/include/computer.c
-HEADERS = src/include/instruction.h src/include/computer.h
+COMPUTER_SRCS = src/main.c src/include/instruction.c src/include/computer.c
+ASSEMBLER_SRCS = src/assembler.c
 
-OBJS = $(SRCS:.c=.o)
+COMPUTER_HEADERS = src/include/instruction.h src/include/computer.h
 
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+COMPUTER_OBJS = $(COMPUTER_SRCS:.c=.o)
+ASSEMBLER_OBJS = $(ASSEMBLER_SRCS:.c=.o)
 
-%.o: %.c $(HEADERS)
+$(COMPUTER_TARGET): $(COMPUTER_OBJS)
+	$(CC) $(CFLAGS) -o $(COMPUTER_TARGET) $(COMPUTER_OBJS)
+
+$(ASSEMBLER_TARGET): $(ASSEMBLER_OBJS)
+	$(CC) $(CFLAGS) -o $(ASSEMBLER_TARGET) $(ASSEMBLER_OBJS)
+
+%.o: %.c $(COMPUTER_HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(COMPUTER_OBJS) $(ASSEMBLER_OBJS) $(COMPUTER_TARGET) $(ASSEMBLER_TARGET)
 
